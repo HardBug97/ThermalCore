@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "title": "SpongeBlast",
-      "item": "minecraft:player_head{SkullOwner:'SpongeBlast'}",
+      "item": "minecraft:player_head[profile='SpongeBlast']",
       "text": "В руководстве создал категорию улучшений, чтобы все могли наконец знать, для чего их использовать. :D "
     }
   ]

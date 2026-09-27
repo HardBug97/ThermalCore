@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "title": "SpongeBlast",
-      "item": "minecraft:player_head{SkullOwner:'SpongeBlast'}",
+      "item": "minecraft:player_head[profile='SpongeBlast']",
       "text": "オーグメントカテゴリを設け、最終的にこれらが何に使うのかをわかりやすくしました。:D "
     }
   ]
