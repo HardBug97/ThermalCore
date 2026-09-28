@@ -7,7 +7,13 @@
         "threshold": 1,
         "model": {
           "type": "minecraft:model",
-          "model": "thermal:item/satchel_color"
+          "model": "thermal:item/satchel_color",
+          "tints": [
+            {
+              "type": "cofh_core:colorable",
+              "index": 0
+            }
+          ]
         }
       }
     ],
