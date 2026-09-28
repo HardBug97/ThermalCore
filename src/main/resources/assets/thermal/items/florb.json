@@ -1,10 +1,7 @@
 {
   "model": {
-    "type": "neoforge:fluid_container",
-    "fluid": "minecraft:empty",
-    "textures": {
-      "base": "thermal:item/florb",
-      "fluid": "thermal:item/florb_mask"
-    }
+    "type": "cofh_core:fluid_container",
+    "base": "thermal:item/florb",
+    "fluid_mask": "thermal:item/florb_mask"
   }
 }
