@@ -1,6 +1,16 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "thermal:item/blitz_spawn_egg"
+    "model": "thermal:item/blitz_spawn_egg",
+    "tints": [
+      {
+        "type": "cofh_core:colorable",
+        "index": 0
+      },
+      {
+        "type": "cofh_core:colorable",
+        "index": 1
+      }
+    ]
   }
 }
