@@ -85,7 +85,7 @@ public class UnderlayBakedModel extends DelegateBlockStateModel {
                     cachedFluidQuads = new BakedQuad[6];
                 }
                 if (cachedFluidQuads[sideIndex] == null) {
-                    cachedFluidQuads[sideIndex] = ModelUtils.retexture(RenderHelper.mulColor(baseQuad, FluidHelper.color(fluid)), RenderHelper.getFluidTexture(fluid));
+                    cachedFluidQuads[sideIndex] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(baseQuad, FluidHelper.color(fluid)), RenderHelper.getFluidTexture(fluid));
                     FLUID_QUAD_CACHE.put(wrapper, cachedFluidQuads);
                 }
                 builder.addUnderlayQuad(side, cachedFluidQuads[sideIndex]);
@@ -97,7 +97,7 @@ public class UnderlayBakedModel extends DelegateBlockStateModel {
                 cachedUnderlayQuads = new BakedQuad[6];
             }
             if (cachedUnderlayQuads[sideIndex] == null) {
-                cachedUnderlayQuads[sideIndex] = ModelUtils.retexture(baseQuad, RenderHelper.getTexture(loc));
+                cachedUnderlayQuads[sideIndex] = ModelUtils.retextureUnderlay(baseQuad, RenderHelper.getTexture(loc));
                 UNDERLAY_QUAD_CACHE.put(state, cachedUnderlayQuads);
             }
             builder.addUnderlayQuad(side, cachedUnderlayQuads[sideIndex]);

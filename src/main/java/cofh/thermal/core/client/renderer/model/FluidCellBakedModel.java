@@ -134,12 +134,12 @@ public class FluidCellBakedModel extends UnderlayBakedModel {
                     TextureAtlasSprite fluidTexture = RenderHelper.getFluidTexture(fluid);
                     int fluidColor = FluidHelper.color(fluid);
 
-                    cachedUnderlayQuads[0] = ModelUtils.retexture(RenderHelper.mulColor(builder.getQuads(DOWN).get(0), fluidColor), fluidTexture);
-                    cachedUnderlayQuads[1] = ModelUtils.retexture(RenderHelper.mulColor(builder.getQuads(UP).get(0), fluidColor), fluidTexture);
-                    cachedUnderlayQuads[2] = ModelUtils.retexture(RenderHelper.mulColor(builder.getQuads(NORTH).get(0), fluidColor), fluidTexture);
-                    cachedUnderlayQuads[3] = ModelUtils.retexture(RenderHelper.mulColor(builder.getQuads(SOUTH).get(0), fluidColor), fluidTexture);
-                    cachedUnderlayQuads[4] = ModelUtils.retexture(RenderHelper.mulColor(builder.getQuads(WEST).get(0), fluidColor), fluidTexture);
-                    cachedUnderlayQuads[5] = ModelUtils.retexture(RenderHelper.mulColor(builder.getQuads(EAST).get(0), fluidColor), fluidTexture);
+                    cachedUnderlayQuads[0] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(builder.getQuads(DOWN).get(0), fluidColor), fluidTexture);
+                    cachedUnderlayQuads[1] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(builder.getQuads(UP).get(0), fluidColor), fluidTexture);
+                    cachedUnderlayQuads[2] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(builder.getQuads(NORTH).get(0), fluidColor), fluidTexture);
+                    cachedUnderlayQuads[3] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(builder.getQuads(SOUTH).get(0), fluidColor), fluidTexture);
+                    cachedUnderlayQuads[4] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(builder.getQuads(WEST).get(0), fluidColor), fluidTexture);
+                    cachedUnderlayQuads[5] = ModelUtils.retextureUnderlay(RenderHelper.mulColor(builder.getQuads(EAST).get(0), fluidColor), fluidTexture);
                     ITEM_UNDERLAY_QUAD_CACHE.put(fluidHash, cachedUnderlayQuads);
                 }
                 builder.addUnderlayQuad(DOWN, cachedUnderlayQuads[0]);

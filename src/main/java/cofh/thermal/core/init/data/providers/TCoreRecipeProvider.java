@@ -6,13 +6,16 @@ import cofh.lib.init.tags.ItemTagsCoFH;
 import cofh.thermal.lib.util.references.ThermalTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.CustomCraftingRecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.DyeRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -704,6 +707,11 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .pattern("LWL")
                 .unlockedBy("has_leather", has(Tags.Items.LEATHERS))
                 .save(recipeOutput, this.modid + ":" + folder + "/" + name(result));
+
+        Item satchel = result;
+        CustomCraftingRecipeBuilder.customCrafting(MISC, (commonInfo, bookInfo) -> new DyeRecipe(commonInfo, bookInfo, Ingredient.of(satchel), tag(ItemTags.DYES), new ItemStackTemplate(satchel)))
+                .unlockedBy("has_satchel", has(satchel))
+                .save(recipeOutput, this.modid + ":" + folder + "/" + name(satchel) + "_dyed");
 
         result = reg.get(ID_DETONATOR);
         ShapedRecipeBuilder.shaped(items, TOOLS, result)

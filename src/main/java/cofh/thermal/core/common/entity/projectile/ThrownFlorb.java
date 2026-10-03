@@ -19,17 +19,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.neoforged.neoforge.fluids.FluidActionResult;
 import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
+import net.neoforged.neoforge.transfer.fluid.FluidUtil;
 
-import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.NBTTags.TAG_FLUID;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreEntities.THROWN_FLORB;
 import static cofh.thermal.lib.util.ThermalIDs.ID_FLORB;
 import static net.minecraft.core.Direction.UP;
-import static net.minecraft.world.InteractionHand.MAIN_HAND;
 
 public class ThrownFlorb extends ThrowableItemProjectile {
 
@@ -86,7 +84,7 @@ public class ThrownFlorb extends ThrowableItemProjectile {
                 } else if (result instanceof EntityHitResult entityHitResult) {
                     hitPos = entityHitResult.getEntity().getOnPos();
                 }
-                FluidActionResult actionResult = FluidUtil.tryPlaceFluid(getOwner() instanceof Player player ? player : null, this.level, MAIN_HAND, hitPos.relative(hitDir), getItem(), getFluid(getItem()).copyWithAmount(BUCKET_VOLUME));
+                FluidUtil.tryPlaceFluid(FluidResource.of(fluid), getOwner() instanceof Player player ? player : null, this.level, hitPos.relative(hitDir), false);
             }
             this.level.broadcastEntityEvent(this, (byte) 3);
             this.discard();
