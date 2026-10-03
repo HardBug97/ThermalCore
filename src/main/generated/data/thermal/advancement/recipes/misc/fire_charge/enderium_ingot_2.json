@@ -1,25 +1,4 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:or",
-      "values": [
-        {
-          "type": "neoforge:not",
-          "value": {
-            "type": "neoforge:tag_empty",
-            "tag": "c:dusts/lead"
-          }
-        },
-        {
-          "type": "neoforge:not",
-          "value": {
-            "type": "neoforge:tag_empty",
-            "tag": "c:ingots/lead"
-          }
-        }
-      ]
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_ender_pearl": {

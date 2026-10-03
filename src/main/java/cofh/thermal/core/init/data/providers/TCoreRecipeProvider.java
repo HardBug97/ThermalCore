@@ -12,7 +12,6 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
@@ -20,12 +19,7 @@ import net.minecraft.world.item.crafting.DyeRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.conditions.ICondition;
-import net.neoforged.neoforge.common.conditions.NotCondition;
-import net.neoforged.neoforge.common.conditions.OrCondition;
-import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
 
-import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
@@ -126,13 +120,6 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
     }
 
     // region HELPERS
-    // A union of tags that are all empty can't be sent to a client, so such recipes don't load.
-    @SafeVarargs
-    private static ICondition anyTagPresent(TagKey<Item>... tags) {
-
-        return new OrCondition(Arrays.stream(tags).<ICondition>map(tag -> new NotCondition(new TagEmptyCondition<>(tag))).toList());
-    }
-
     private void generateAlloyRecipes(RecipeOutput consumer) {
 
         var reg = ITEMS;
@@ -180,7 +167,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .requires(Tags.Items.DUSTS_REDSTONE)
                 .requires(Items.FIRE_CHARGE)
                 .unlockedBy("has_redstone_dust", has(Tags.Items.DUSTS_REDSTONE))
-                .save(consumer.withConditions(anyTagPresent(ItemTagsCoFH.DUSTS_SILVER, ItemTagsCoFH.INGOTS_SILVER)), ID_THERMAL + ":fire_charge/signalum_ingot_4");
+                .save(consumer, ID_THERMAL + ":fire_charge/signalum_ingot_4");
 
         ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("lumium_ingot"), 4)
                 .requires(fromTags(ItemTagsCoFH.DUSTS_TIN, ItemTagsCoFH.INGOTS_TIN))
@@ -191,7 +178,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .requires(Tags.Items.DUSTS_GLOWSTONE)
                 .requires(Items.FIRE_CHARGE)
                 .unlockedBy("has_glowstone_dust", has(Tags.Items.DUSTS_GLOWSTONE))
-                .save(consumer.withConditions(anyTagPresent(ItemTagsCoFH.DUSTS_TIN, ItemTagsCoFH.INGOTS_TIN), anyTagPresent(ItemTagsCoFH.DUSTS_SILVER, ItemTagsCoFH.INGOTS_SILVER)), ID_THERMAL + ":fire_charge/lumium_ingot_4");
+                .save(consumer, ID_THERMAL + ":fire_charge/lumium_ingot_4");
 
         ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("enderium_ingot"), 2)
                 .requires(fromTags(ItemTagsCoFH.DUSTS_LEAD, ItemTagsCoFH.INGOTS_LEAD))
@@ -202,7 +189,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .requires(fromTags(Tags.Items.ENDER_PEARLS, ItemTagsCoFH.DUSTS_ENDER_PEARL))
                 .requires(Items.FIRE_CHARGE)
                 .unlockedBy("has_ender_pearl", has(Tags.Items.ENDER_PEARLS))
-                .save(consumer.withConditions(anyTagPresent(ItemTagsCoFH.DUSTS_LEAD, ItemTagsCoFH.INGOTS_LEAD)), ID_THERMAL + ":fire_charge/enderium_ingot_2");
+                .save(consumer, ID_THERMAL + ":fire_charge/enderium_ingot_2");
 
         ShapelessRecipeBuilder.shapeless(items, BUILDING_BLOCKS, reg.get("obsidian_glass"), 2)
                 .requires(Tags.Items.OBSIDIANS)
