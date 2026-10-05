@@ -111,7 +111,7 @@ public class FluidCellBlockItem extends BlockItemAugmentable implements IFluidCo
     public FluidStack getFluid(ItemStack container) {
 
         CompoundTag tag = getTankTag(container);
-        return FluidStack.parseOptional(ProxyUtils.registryAccess(), tag);
+        return FluidStorageCoFH.readFluid(ProxyUtils.registryAccess(), tag);
     }
 
     @Override

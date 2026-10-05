@@ -7,6 +7,7 @@ import cofh.core.util.helpers.ItemHelper;
 import cofh.core.util.helpers.RenderHelper;
 import cofh.lib.api.item.IFluidContainerItem;
 import cofh.lib.client.renderer.block.model.RetexturedBakedQuad;
+import cofh.lib.common.fluid.FluidStorageCoFH;
 import cofh.lib.util.crafting.ComparableItemStack;
 import cofh.lib.util.helpers.MathHelper;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -231,7 +232,7 @@ public class FluidCellBakedModel extends UnderlayBakedModel implements IDynamicB
         if (tanks.isEmpty()) {
             return FluidStack.EMPTY;
         }
-        return FluidStack.parseOptional(ProxyUtils.registryAccess(), tanks.getCompound(0));
+        return FluidStorageCoFH.readFluid(ProxyUtils.registryAccess(), tanks.getCompound(0));
     }
 
     private byte[] getSideConfigRaw(CompoundTag tag) {
