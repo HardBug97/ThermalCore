@@ -9,6 +9,7 @@ import cofh.lib.common.block.TntBlockCoFH;
 import cofh.lib.common.item.ArmorMaterialCoFH;
 import cofh.thermal.core.common.item.*;
 import cofh.thermal.lib.common.item.AugmentItem;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.food.Foods;
@@ -23,6 +24,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.FlagManager.getFlag;
 import static cofh.lib.util.Utils.itemProperties;
+import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.ThermalCore.ARMOR_MATERIALS;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
@@ -440,8 +442,8 @@ public class TCoreItems {
     private static final int DIVING_DURABILITY = 12;
     private static final int HAZMAT_DURABILITY = 6;
 
-    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BEEKEEPER = ARMOR_MATERIALS.register("beekeeper", () -> ArmorMaterialCoFH.create(new int[]{1, 2, 3, 1}, 16, SoundEvents.ARMOR_EQUIP_ELYTRA, 0.0F, 0.0F, () -> Ingredient.of(ITEMS.get("beekeeper_fabric"))));
-    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> DIVING = ARMOR_MATERIALS.register("diving", () -> ArmorMaterialCoFH.create(new int[]{1, 4, 5, 2}, 20, SoundEvents.ARMOR_EQUIP_CHAIN, 0.0F, 0.0F, () -> Ingredient.of(ITEMS.get("diving_fabric"))));
-    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> HAZMAT = ARMOR_MATERIALS.register("hazmat", () -> ArmorMaterialCoFH.create(new int[]{1, 4, 5, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> Ingredient.of(ITEMS.get("hazmat_fabric"))));
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BEEKEEPER = ARMOR_MATERIALS.register("beekeeper", () -> ArmorMaterialCoFH.create(ResourceLocation.fromNamespaceAndPath(ID_THERMAL, "beekeeper"), new int[]{1, 2, 3, 1}, 16, SoundEvents.ARMOR_EQUIP_ELYTRA, 0.0F, 0.0F, () -> Ingredient.of(ITEMS.get("beekeeper_fabric"))));
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> DIVING = ARMOR_MATERIALS.register("diving", () -> ArmorMaterialCoFH.create(ResourceLocation.fromNamespaceAndPath(ID_THERMAL, "diving"), new int[]{1, 4, 5, 2}, 20, SoundEvents.ARMOR_EQUIP_CHAIN, 0.0F, 0.0F, () -> Ingredient.of(ITEMS.get("diving_fabric"))));
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> HAZMAT = ARMOR_MATERIALS.register("hazmat", () -> ArmorMaterialCoFH.create(ResourceLocation.fromNamespaceAndPath(ID_THERMAL, "hazmat"), new int[]{1, 4, 5, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> Ingredient.of(ITEMS.get("hazmat_fabric"))));
 
 }

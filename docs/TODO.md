@@ -45,7 +45,8 @@ Phase A (1.21.1) is **code-complete** on branch `1.21.1`: `./gradlew build` is c
   literal `tag("...")` calls — `c:dyes/<colour>` and `c:dyed/<colour>` come from NeoForge's
   `DyeColor` patch — so grepping `Tags.java` alone gives false "does not exist" answers.
   `c:slimeballs` still works but is deprecated in favour of `c:slime_balls`.
-- **`data/thermal/recipe/tools/guidebook.json` is still on the pre-1.20.5 recipe shape** — a
+- ~~`guidebook.json` result shape~~ fixed 2026-10-05: result sets the `patchouli:book`
+  component. Original note: **`data/thermal/recipe/tools/guidebook.json` is still on the pre-1.20.5 recipe shape** — a
   `"nbt"` string in `result` and `{"item": …}` ingredients. Needs `components` /
   `DataComponents` when recipes are done (A.2). Its condition type was fixed to
   `neoforge:mod_loaded` during the sweep (it was `forge:mod_loaded` — a condition, not a tag,
