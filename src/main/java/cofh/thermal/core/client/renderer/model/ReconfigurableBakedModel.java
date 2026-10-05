@@ -5,8 +5,10 @@ import cofh.core.util.helpers.ItemHelper;
 import cofh.lib.client.renderer.block.model.RetexturedBakedQuad;
 import cofh.lib.util.crafting.ComparableItemStack;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import java.util.Collections;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -36,10 +38,10 @@ import static net.minecraft.core.Direction.*;
 
 public class ReconfigurableBakedModel extends UnderlayBakedModel implements IDynamicBakedModel {
 
-    private static final Int2ObjectMap<BakedQuad[]> SIDE_QUAD_CACHE = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<BakedQuad[]> SIDE_QUAD_CACHE = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 
-    private static final Int2ObjectMap<BakedQuad[]> ITEM_QUAD_CACHE = new Int2ObjectOpenHashMap<>();
-    private static final Map<List<Integer>, BakedModel> MODEL_CACHE = new Object2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<BakedQuad[]> ITEM_QUAD_CACHE = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
+    private static final Map<List<Integer>, BakedModel> MODEL_CACHE = Collections.synchronizedMap(new Object2ObjectOpenHashMap<>());
 
     public static void clearCache() {
 

@@ -6,6 +6,7 @@ import cofh.core.util.helpers.FluidHelper;
 import cofh.core.util.helpers.RenderHelper;
 import cofh.lib.client.renderer.block.model.RetexturedBakedQuad;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import java.util.Collections;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.resources.model.BakedModel;
@@ -27,8 +28,8 @@ import java.util.Map;
 
 public class UnderlayBakedModel extends BakedModelWrapper<BakedModel> implements IDynamicBakedModel {
 
-    private static final Map<FluidCacheWrapper, BakedQuad[]> FLUID_QUAD_CACHE = new Object2ObjectOpenHashMap<>();
-    private static final IdentityHashMap<BlockState, BakedQuad[]> UNDERLAY_QUAD_CACHE = new IdentityHashMap<>();
+    private static final Map<FluidCacheWrapper, BakedQuad[]> FLUID_QUAD_CACHE = Collections.synchronizedMap(new Object2ObjectOpenHashMap<>());
+    private static final Map<BlockState, BakedQuad[]> UNDERLAY_QUAD_CACHE = Collections.synchronizedMap(new IdentityHashMap<>());
 
     public static void clearCache() {
 
