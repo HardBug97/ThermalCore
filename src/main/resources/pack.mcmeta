@@ -3,6 +3,7 @@
     "description": {
       "translate": "pack.thermal.description"
     },
-    "pack_format": 15
+    "pack_format": 34,
+    "supported_formats": [34, 48]
   }
 }
