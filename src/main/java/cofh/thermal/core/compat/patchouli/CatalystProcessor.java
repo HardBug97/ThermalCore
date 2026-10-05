@@ -41,13 +41,13 @@ public class CatalystProcessor implements IComponentProcessor {
                 switch (keys[1]) {
                     case "machine":
                         if (managers.get(machineIndex) instanceof SmelterRecipeManager)
-                            return IVariable.wrap(localize("block.thermal.machine_smelter"));
+                            return IVariable.wrap(localize("block.thermal.machine_smelter"), level.registryAccess());
                         if (managers.get(machineIndex) instanceof PulverizerRecipeManager)
-                            return IVariable.wrap(localize("block.thermal.machine_pulverizer"));
+                            return IVariable.wrap(localize("block.thermal.machine_pulverizer"), level.registryAccess());
                         if (managers.get(machineIndex) instanceof InsolatorRecipeManager)
-                            return IVariable.wrap(localize("block.thermal.machine_insolator"));
+                            return IVariable.wrap(localize("block.thermal.machine_insolator"), level.registryAccess());
                     case "enablejei":
-                        return IVariable.wrap(managers.get(machineIndex).getCatalysts().size() > 6);
+                        return IVariable.wrap(managers.get(machineIndex).getCatalysts().size() > 6, level.registryAccess());
                     default:
                         return null;
                 }
@@ -60,17 +60,17 @@ public class CatalystProcessor implements IComponentProcessor {
                     ItemStack catalyst = catalysts.get(catalystIndex);
                     switch (keys[2]) {
                         case "enable":
-                            return IVariable.wrap(true);
+                            return IVariable.wrap(true, level.registryAccess());
                         case "item":
-                            return IVariable.wrap(Utils.getRegistryName(catalyst.getItem()).toString());
+                            return IVariable.wrap(Utils.getRegistryName(catalyst.getItem()).toString(), level.registryAccess());
                         case "p":
-                            return IVariable.wrap(manager.getCatalyst(catalyst).getPrimaryMod());
+                            return IVariable.wrap(manager.getCatalyst(catalyst).getPrimaryMod(), level.registryAccess());
                         case "s":
-                            return IVariable.wrap(manager.getCatalyst(catalyst).getSecondaryMod());
+                            return IVariable.wrap(manager.getCatalyst(catalyst).getSecondaryMod(), level.registryAccess());
                         case "e":
-                            return IVariable.wrap(manager.getCatalyst(catalyst).getEnergyMod());
+                            return IVariable.wrap(manager.getCatalyst(catalyst).getEnergyMod(), level.registryAccess());
                         case "u":
-                            return IVariable.wrap((int) (manager.getCatalyst(catalyst).getUseChance() * 100));
+                            return IVariable.wrap((int) (manager.getCatalyst(catalyst).getUseChance() * 100), level.registryAccess());
                         default:
                             return null;
                     }

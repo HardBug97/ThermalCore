@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "title": "ShinyPorygon",
-      "item": "minecraft:player_head{SkullOwner:'ShinyPorygon'}",
+      "item": "minecraft:player_head[minecraft:profile={name:\"ShinyPorygon\"}]",
       "text": "プロジェクトリーダー、共著者。カテゴリを含む本書の最初の仕事をしました。Discordについて数多くを書き、多くのModサポートファイル(今後も増える予定)を作成し、King Lemming氏に迷惑をかけました。誤情報の拡散者、Hekeraの精神的支柱。"
     },
     {

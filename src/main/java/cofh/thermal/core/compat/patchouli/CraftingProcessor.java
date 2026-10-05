@@ -58,7 +58,7 @@ public class CraftingProcessor implements IComponentProcessor {
         } else if (key.equals("title")) {
             return IVariable.from(recipe.getResultItem(level.registryAccess()).getHoverName(), level.registryAccess());
         } else if (key.equals("show")) {
-            return IVariable.wrap(true);
+            return IVariable.wrap(true, level.registryAccess());
         }
         return null;
     }

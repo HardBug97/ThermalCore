@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "title": "ShinyPorygon",
-      "item": "minecraft:player_head{SkullOwner:'ShinyPorygon'}",
+      "item": "minecraft:player_head[minecraft:profile={name:\"ShinyPorygon\"}]",
       "text": "Руководитель проекта, соавтор. Начальная работа над книгой, включая категории. Написал кое-что для дискорда, много файлов поддержки модов (и еще больше впереди), личный раздражитель для Кинга, распространитель дезинформации, моральная поддержка для Hekera."
     },
     {

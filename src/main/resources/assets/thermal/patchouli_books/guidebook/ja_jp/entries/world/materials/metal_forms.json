@@ -7,6 +7,18 @@
     {
       "type": "thermal:5_item_page",
       "title": "歯車、コイン、粉、その他",
+      "item1": "thermal:copper_gear,thermal:signalum_gear,thermal:lumium_gear,thermal:enderium_gear,thermal:iron_gear,thermal:gold_gear,thermal:lapis_gear,thermal:diamond_gear,thermal:emerald_gear",
+      "item2": "thermal:copper_plate,thermal:signalum_plate,thermal:lumium_plate,thermal:enderium_plate,thermal:iron_plate,thermal:gold_plate",
+      "item3": "thermal:copper_coin,thermal:signalum_coin,thermal:lumium_coin,thermal:enderium_coin,thermal:iron_coin,thermal:gold_coin",
+      "item4": "thermal:copper_dust,thermal:signalum_dust,thermal:lumium_dust,thermal:enderium_dust,thermal:iron_dust,thermal:gold_dust,thermal:lapis_dust,thermal:diamond_dust,thermal:emerald_dust",
+      "item5": "thermal:copper_nugget,thermal:signalum_nugget,thermal:lumium_nugget,thermal:enderium_nugget",
+      "text": "Thermalは様々なレシピに使用するための、多様な形状の金属や宝石を追加します。代表的なのは金属塊で、バニラの鉄塊や金塊と同様の機能があります。",
+      "flag": "!mod:thermal_foundation"
+    },
+    {
+      "flag": "mod:thermal_foundation",
+      "type": "thermal:5_item_page",
+      "title": "歯車、コイン、粉、その他",
       "item1": "thermal:copper_gear,thermal:tin_gear,thermal:lead_gear,thermal:silver_gear,thermal:nickel_gear,thermal:bronze_gear,thermal:invar_gear,thermal:electrum_gear,thermal:constantan_gear,thermal:signalum_gear,thermal:lumium_gear,thermal:enderium_gear,thermal:iron_gear,thermal:gold_gear,thermal:lapis_gear,thermal:diamond_gear,thermal:emerald_gear",
       "item2": "thermal:copper_plate,thermal:tin_plate,thermal:lead_plate,thermal:silver_plate,thermal:nickel_plate,thermal:bronze_plate,thermal:invar_plate,thermal:electrum_plate,thermal:constantan_plate,thermal:signalum_plate,thermal:lumium_plate,thermal:enderium_plate,thermal:iron_plate,thermal:gold_plate",
       "item3": "thermal:copper_coin,thermal:tin_coin,thermal:lead_coin,thermal:silver_coin,thermal:nickel_coin,thermal:bronze_coin,thermal:invar_coin,thermal:electrum_coin,thermal:constantan_coin,thermal:signalum_coin,thermal:lumium_coin,thermal:enderium_coin,thermal:iron_coin,thermal:gold_coin",

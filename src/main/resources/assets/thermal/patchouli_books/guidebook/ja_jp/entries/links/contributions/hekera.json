@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "title": "Hekera",
-      "item": "minecraft:player_head{SkullOwner:'Hekera'}",
+      "item": "minecraft:player_head[minecraft:profile={name:\"Hekera\"}]",
       "text": "共著者であり、何度も本書を書き直しました。レイアウトの改善を行い、より素敵な本に仕立ててくれましたが、多くのミスに悩まされました。Shinyをからかうのが大好きです。"
     },
     {

@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "title": "ShinyPorygon",
-      "item": "minecraft:player_head{SkullOwner:'ShinyPorygon'}",
+      "item": "minecraft:player_head[minecraft:profile={name:\"ShinyPorygon\"}]",
       "text": "專案負責人，合著者。最初的書籍工作包括類別。為 Discord 寫了一些東西，許多模組支援檔案（還有更多）對 King 的個人滋擾，錯誤信息的傳播者，對 Hekera 的道義支援。"
     },
     {
