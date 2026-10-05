@@ -32,7 +32,7 @@ public class ThermalClientConfig implements IBaseConfig {
 
         festiveVanillaMobs = builder
                 .comment("If TRUE, some vanilla Mobs will also have festive hats on certain days. May require client restart.")
-                .define("Festive Vanilla Mobs", festiveMobs);
+                .define("Festive Vanilla Mobs", festiveVanillaMobs);
 
         builder.pop();
     }
